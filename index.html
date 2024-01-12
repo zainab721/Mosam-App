@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel = "///Users/zainabmohammad/Documents/GitHub/Weather-App-Week--7-lesson-2/src/index.html/styles.css/index.js"/>
-    <link rel ="preconnect" href="https://fonts.googleapis.com" />
-    <link rel ="preconnect" href="https://fonts.gststic.com" crossorigin />
-    <link rel="preconnect" href="https://fontsgooglrapis.com/css2/family=Roboto:ital,wght@0.100; 0,300,;0,400; " />
+    <link rel = "///Users/zainabmohammad/Documents/GitHub/Weather-App-Week--7-lesson-2/Mosam-App/styles.css"/>
+    <link rel = "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-night.png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"/>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="index.js" href = "index.js">
+    <link rel="stylesheet" href="styles.css">
     <title> Weather App </title>
 </head>
 <body>
@@ -22,30 +26,37 @@
              id = "search-form-input"
              class = "search-form-input"
              />
-             <input type = "Submit" value ="Search  "/>
+             <input type = "Submit" value ="Search" class="search-form-button" />
             </form>
         </header>
     <mian>
     <div calss="weather-app-data">
     <div>
-    <h1 class ="weather-app-city" id="City"> </h1>
+    <h1 class ="weather-app-city"  id="city"> </h1>
     <p class ="weather-app-details">
-        Wednesday 11:00 PM
-        Clear sky with periodic clouds
+        <span id = "time"></span>
+        <span id = "discription"></span>
         <br />
-        Precipitation: 
-        Humidity: <strong>66%</strong>
-        Wind: <strong>3.13km/h</strong> 
+        <div id="current-date"></div>Moderate Rain />
+       <div> Humidity: <strong id = "Humidity">87%</strong></div>
+       <div> Wind: <strong id = "Wind-Speed">7.2km/h</strong></strong></div>
     </p>
 </div>
 <div class ="weather-app-temperature-container">  
-    <div class = "weather-app-icon"> </div>
-    <div class = "weather-app-temperature" id ="temperature"> </div>
-    <div class = "weather-app-unit">°C</div>
-    <div id="icon"></div>
+<div class = "weather-app-icon"> 
+ <img 
+ src ="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-night.png", />
+</div>
+    <div class = "weather-app-temperature" id ="temperature"></div>
+    <div id="icon"> </div>
+    <div class="weather-app-temperature" id="temperature">24</div>
+    <div class = "weather-app-unit">°c</div>
+    </div>
 </div>
 </mian>
-<footer>This Project is Coded by 
+
+<footer>
+    This Project is Coded by 
     <a href ="https://github.com/zainab721/ " target  = "_ blank ">Zainab Mohmmad</a>
     Code is
     <a href ="https://github.com/zainab721/Weather-App-Week-7-lesson-2/ " target  = "_ blank " >
@@ -55,6 +66,5 @@
     Hosted on Netlify</a>
 </footer>
 </div>
-<script src="src/index.js"></script>
 </body>
-    </html>
+</html>

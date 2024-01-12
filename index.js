@@ -15,13 +15,22 @@ cityElement.innerHTML = response.data.city;
 temperatureElement.innerhtml = Math.round(temperature); 
 descricriptionElement.innerhtml = response.data.condition.descricription;
 humidityElemen.innerhtml ='${response.data.condition.humidity}%';
-humidityElemen.innerhtml ='${response.data.condition.humidity}%';
-windspeedElement.innerhtml = Document.querySelector = '${response.data.wind.speed}km/h';
-timeElement.innerhtml ='${date.getDay()}'; '${date.getHours()}';'${date.getMinutes()}';'${date.getseconds()}';
-iconElement.innerHTML =  `<img src="${response.data.condition.icon_url}" class="weather-app-icon" 
-/>`;
+windspeedElement.innerhtml  = '${response.data.wind.speed}km/h';
+timeElement.innerhtml = formatDate(date);
+iconElement.innerHTML =  `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
+}
 
-unction formatDate(date)
+function displayTemperature(response) {
+    let temperatureElement = document.queryselactor("#temperture");
+    let temperature = Math.round(response.data.temperature.current);
+    let city = response.data.city;
+    temperatureElement.innerHTML = "temperature in Sydney is ${temperature}°C";
+  
+  cityElement.innerHTML = response.data.city;
+  temperatureElement.innerhtml = Math.round(temperature); 
+}
+
+function formatDate(date)
 {
     let day = date.getDay();
     let minutes = date.getMinutes();
@@ -44,5 +53,21 @@ unction formatDate(date)
    if (minutes < 10 ) {
    minutes = '0${minutes}';
    }
-       return " Wednesday 11:00pm";
-   
+       return  '$(day) $(hour) $(minutes)';
+
+       function searchCity(city); {
+        let apiKey = "e095dc345c934o5ae8fb54ctcbb40bf0";
+        let apiUrl =
+          "https://api.shecodes.io/weather/v1/current?lon={lon}&lat={lat}&key={key}&units=matrics";
+         axios.get(apiUrl).then(refreshweather);
+       }
+    function handlesearchubmit(event) {
+         event.preventDefault();
+
+         searchCity(searchInput.Value);
+
+let searchFormElement = document.querySelector("#search-form");
+searchFormElement.addEventListener("submit", handleSearchSubmit);
+
+searchCity("Paris");
+    }
