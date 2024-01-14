@@ -57,8 +57,8 @@ function formatDate(date)
 
        function searchCity(city); {
         let apiKey = "e095dc345c934o5ae8fb54ctcbb40bf0";
-        let apiUrl =
-          "https://api.shecodes.io/weather/v1/current?lon={lon}&lat={lat}&key={key}&units=matrics";
+        let apiUrl ="https://api.shecodes.io/weather/v1/current?query=Lisbon&key=e095dc345c934o5ae8fb54ctcbb40bf0&units=metric"
+          
          axios.get(apiUrl).then(refreshweather);
        }
     function handlesearchubmit(event) {
