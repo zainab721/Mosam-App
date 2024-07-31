@@ -1,9 +1,27 @@
+
+function refreshWeather(response){
+let temperatureElement = document.querySelector("#temprature");
+let temperature = response.date.temperature.current;
+let cityElement = document.querySelector("#city");
+
+cityElement.innerHTML = response.date.city;
+temperatureElement.innerHTML = Math.round(temperature); 
+}
+
+function searchCity(city)  {
+let apiKey = "e095dc345c934o5ae8fb54ctcbb40bf0";
+apiUrl = "https://api.shecodes.io/weather/v1/current?query=${city}&key={apiKey}&units=metric";
+axios.get(apiUrl).then(refreshweather);
+console.log(response.data.temperature.current);
+}
+
 function handleSearchSubmit(event) {
-  event.preventDefult(); 
+  event.preventDefault(); 
   searchInput = document.querySelector("#search-form-input");
   let cityElement = document.querySelector("#city");
   cityElement .innerHTML = searchInput.value;
-  
+  searchCity(searchInput.value);
+  apiUrl = "https://api.shecodes.io/weather/v1/current?query={query}&key={key}"
   }
   
   let searchElemnt = document.querySelector("#search-form");
@@ -68,19 +86,12 @@ function formatDate(date)
    }
        return  '$(day) $(hour) $(minutes)';
 
-       function searchCity(city); {
-        let apiKey = "e095dc345c934o5ae8fb54ctcbb40bf0";
-        let apiUrl ="https://api.shecodes.io/weather/v1/current?query=Lisbon&key=e095dc345c934o5ae8fb54ctcbb40bf0&units=metric"
-          
-         axios.get(apiUrl).then(refreshweather);
-       }
-    function handlesearchubmit(event) {
-         event.preventDefault();
-
-         searchCity(searchInput.Value);
-
-let searchFormElement = document.querySelector("#search-form");
-searchFormElement.addEventListener("submit", handleSearchSubmit);
-
-searchCity("Paris");
+       
+      
+       
+    {
+    
+      let searchFormElement = document.querySelector("#search-form-input");
+      searchFormElement.adddEventListner("submit", handleSearchSubmit);
+      searchCity("Lisbon");
     }
