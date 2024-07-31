@@ -85,12 +85,8 @@ function formatDate(date)
    minutes = '0${minutes}';
    }
        return  '$(day) $(hour) $(minutes)';
-
-       
       
-       
-    {
-    
+      {
       let searchFormElement = document.querySelector("#search-form-input");
       searchFormElement.adddEventListner("submit", handleSearchSubmit);
       searchCity("Lisbon");

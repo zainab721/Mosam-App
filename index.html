@@ -12,9 +12,9 @@
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="index.js" href = "index.js">
     <link rel="stylesheet" href="styles.css">
+    <link src="https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}">
     <title> Weather App </title>
 </head>
-
 <body>
     <div class = "weather-app" >
     <header>
@@ -33,21 +33,21 @@
     <div calss="weather-app-data">
         <br>
     <div>
-    <h1 class ="weather-app-city"  id="city">Dallas</h1>
+    <h1 class ="weather-app-city"  id="city" >Dallas</h1>
 <p class ="weather-app-details">
-            <span  id = "current-day">Friday</span>
+            <span id = "current-day">Friday</span>
             <span id = "current-time">11:49</span>
-            <span id="current-date">January, 11</span>
+            <span id ="current-date">January, 11</span>
             <span id = "discription">Moderate Rain</span>
     <br />
-       Humidity: <strong id="Humidity">87%</strong>,
-       Wind: <strong id=" wind-speed">7.2km/h</strong>
+       Humidity: <strong id ="Humidity">87%</strong>,
+       Wind: <strong id ="wind-speed">7.2km/h</strong>
 </p>
 <div>
         <div class ="weather-app-temperature-container">  
-        <div class = "weather-app-icon"> </div>
-        <div class="weather-app-temperature" id="temperature">24</div>
-        <div class = "weather-app-unit">°c</div>
+        <div class ="weather-app-icon"> </div>
+        <div class ="weather-app-temperature" id="temperature">24</div>
+        <div class ="weather-app-unit">°c</div>
         <img 
         src ="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-night.png", />
 </div>
