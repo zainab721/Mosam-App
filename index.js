@@ -1,36 +1,33 @@
 
-function refreshWeather(response){
-let temperatureElement = document.querySelector("#temprature");
-let temperature = response.date.temperature.current;
-let cityElement = document.querySelector("#city");
 
-cityElement.innerHTML = response.date.city;
-temperatureElement.innerHTML = Math.round(temperature); 
-}
+function refreshWeather(response){
+  let temperatureElement = document.querySelector("#temprature");
+  let temperature = response.date.temperature.current;
+  let cityElement = document.querySelector("#city");
+  cityElement.innerHTML = response.date.city;
+  temperatureElement.innerHTML = Math.round(temperature); 
+  }
 
 function searchCity(city)  {
 let apiKey = "e095dc345c934o5ae8fb54ctcbb40bf0";
-apiUrl = "https://api.shecodes.io/weather/v1/current?query=${city}&key={apiKey}&units=metric";
+apiUrl = 'https://api.shecodes.io/weather/v1/current?query=${city}&key={apiKey}&units=metric';
 axios.get(apiUrl).then(refreshweather);
-console.log(response.data.temperature.current);
 }
 
 function handleSearchSubmit(event) {
   event.preventDefault(); 
-  searchInput = document.querySelector("#search-form-input");
+  let searchInput = document.querySelector("#search-form-input");
   let cityElement = document.querySelector("#city");
   cityElement .innerHTML = searchInput.value;
   searchCity(searchInput.value);
-  apiUrl = "https://api.shecodes.io/weather/v1/current?query={query}&key={key}"
-  }
+}
   
   let searchElemnt = document.querySelector("#search-form");
   console.log(searchFormElement);
   searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 
-function refreshweather(response)
-{
+function refreshweather(response){
 let temperatureElement = document.querySelector("#temperature");
 let temperature = response.data.temperature.current;
 let cityElement = Document.querySelector("#city");
@@ -61,13 +58,11 @@ function displayTemperature(response) {
   temperatureElement.innerhtml = Math.round(temperature); 
 }
 
-function formatDate(date)
-{
+function formatDate(date){
     let day = date.getDay();
     let minutes = date.getMinutes();
     let getHours = date.getHours();
-
-    let days =   [
+    let days = [
         "Sunday" ,   
         "Sunday" ,   
         "Monday" ,   
@@ -79,7 +74,7 @@ function formatDate(date)
      ];
     }
 
-    let day = days [date.getDay()];
+   let day = day [date.getDay()];
    
    if (minutes < 10 ) {
    minutes = '0${minutes}';
@@ -88,6 +83,6 @@ function formatDate(date)
       
       {
       let searchFormElement = document.querySelector("#search-form-input");
-      searchFormElement.adddEventListner("submit", handleSearchSubmit);
-      searchCity("Lisbon");
+      searchFormElement.addEventListner("submit", handleSearchSubmit);
+      searchCity("Dallas");
     }
